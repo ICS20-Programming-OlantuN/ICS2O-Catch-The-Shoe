@@ -84,7 +84,7 @@ class GameScene extends Phaser.Scene {
       this.createAlien()
       this.createAlien()
     }.bind(this))
-
+ 
     // Collisions between ship and aliens
     this.physics.add.collider(this.ship, this.alienGroup, function(shipCollide, alienCollide) {
       this.sound.play('bomb')
@@ -138,8 +138,8 @@ class GameScene extends Phaser.Scene {
         this.ship.y = 0
       }
     }
-    if (keySpaceObj.isDown === true ) {
-      if (this.fireMissile === false && this.gameOverText == null) {
+    if (keySpaceObj.isDown === true) {
+      if (this.fireMissile === false) {
         // fire missile
         this.fireMissile = true
         const aNewMissile = this.physics.add.sprite(this.ship.x, this.ship.y, 'missile')
